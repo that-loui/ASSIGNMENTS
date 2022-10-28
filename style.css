@@ -1,0 +1,289 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-image: url(./img/luca-bravo-9l_326FISzk-unsplash.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    color: white;
+    font-family:'Red Hat Display', sans-serif;
+    width: 100%;
+    overflow-y: scroll;
+}
+.container{
+    width: 90%;
+    margin: 0 auto;
+}
+
+a{
+    text-decoration: none;
+    
+}
+
+a:hover{
+    opacity: 70%;
+}
+#main-head{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    margin: auto;
+    background-color: rgb(84, 80, 80);
+    margin-bottom: 500px;
+}
+#main-head .container{
+    height: 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo #icon span{
+    color: brown;
+}
+
+#toggler{
+    display: none;
+}
+
+#main-nav{
+    font-size: 1.2rem;
+    position: relative;
+}
+#main-nav #menu{
+    list-style-type:none;;
+    display: flex;
+    justify-content: space-between;
+}
+
+#menu li{
+    margin-right: 20px;
+    position: relative;
+}
+
+#menu li a{
+    color: brown;
+}
+
+#menu li a:hover ~ div{
+    width: 100%;
+    height: 2px;
+    background-color: brown;
+    transition: all 1s;
+}
+
+main{
+    margin-top: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+#about-me h2{
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+#about-me .about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2rem;
+}
+#about-me div h5{
+    width: 40%;
+}
+
+#about-me div p{
+    width: 60%;
+    margin-left: 160px;
+}
+
+#about-me img{
+    border: 3px gray solid;
+    border-radius: 15px;
+    height: 500px; 
+    width:auto;
+
+    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#hobbies{
+    margin-top: 70px;
+}
+
+#hobbies h2{
+    font-size: 2.5rem;
+}
+
+#hobbies ul  li{
+    margin: 20px;
+}
+
+#services {
+    margin-top: 80px;
+}
+
+#services h2{
+    font-size: 2.5rem;
+}
+
+#services ul{
+    list-style-type: square;
+}
+
+#services li{
+    margin: 20px;
+}
+
+
+footer{
+    background-color: rgb(84, 80, 80);
+    font-size: 2rem;
+    text-align: center;
+}
+
+footer .container ul{
+    display: flex;
+    justify-content: space-around;
+
+    list-style-type: none;
+}
+
+footer .container ul li a{
+    color: brown;
+}
+
+
+@media (max-width:760px) {
+    #toggler{
+        display: block;
+
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        z-index: 2;
+
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+
+        cursor: pointer;
+    }
+
+    .ham-cont{
+        position: absolute;
+        top: -20px;
+        right: 20px;
+        z-index: 1;
+
+        width: 45px;
+        height: 45px;
+
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ham, 
+    .ham::before, 
+    .ham::after{
+
+        position: absolute;
+
+        display: block;
+        width: 30px;
+        height: 3px;
+
+        background-color: white;
+
+        border-radius: 10px;
+
+        transition: transform ease-in 0.5s;
+    }
+
+    .ham::before{
+        content: '';
+        top: -8px;
+    }
+
+    .ham::after{
+        content: '';
+        top: 8px;
+    }
+
+    #toggler:checked + .ham-cont .ham::before{
+        transform: rotate(50deg);
+        top: 0;
+    }
+
+    #toggler:checked + .ham-cont .ham{
+        background-color: rgba(240, 248, 255, 0);
+    }
+
+    #toggler:checked + .ham-cont .ham::after{
+        transform: rotate(-50deg);
+        top: 0;
+    }
+
+    #menu{
+        position: fixed;
+        top: 0;
+        right: 0;
+
+        width: 100%;
+        margin: auto;
+
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 6rem;
+    }
+
+    #menu li{
+
+        width: 100%;
+        margin: auto;
+        padding: 1rem;
+        border: 1px gray solid;
+        text-align: center;
+
+        opacity: 0;
+
+        transition: opacity 0.5s;
+
+        background: linear-gradient(to left, white, brown  );
+    }
+
+    #toggler:checked ~ #menu li{
+        opacity: 1;
+    }
+
+    #about-me .about{
+        flex-direction: column;
+    }
+
+    #about-me .about div h5{
+        width: 100%;
+    }
+
+    #about-me .about div p{
+        width: 100%;
+        margin: auto;
+    }
+}
+
