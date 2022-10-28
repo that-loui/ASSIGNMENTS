@@ -1,176 +1,149 @@
 *{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
-
-html{
-    scroll-behavior: smooth;
-}
-
 body{
-    background-image: url(./img/luca-bravo-9l_326FISzk-unsplash.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    color: white;
-    font-family:'Red Hat Display', sans-serif;
     width: 100%;
-    overflow-y: scroll;
-}
-.container{
-    width: 90%;
-    margin: 0 auto;
+
+    font-size: 20px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    background-color: rgb(183, 183, 253);
 }
 
-a{
-    text-decoration: none;
-    
-}
-
-a:hover{
-    opacity: 70%;
-}
-#main-head{
-    position: fixed;
-    top: 0;
-    width: 100%;
-    margin: auto;
-    background-color: rgb(84, 80, 80);
-    margin-bottom: 500px;
-}
-#main-head .container{
-    height: 6rem;
+header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    margin: 2rem auto;
 }
 
 
-.logo #icon span{
-    color: brown;
+h2 span{
+    color: blue;
 }
 
 #toggler{
     display: none;
 }
 
-#main-nav{
-    font-size: 1.2rem;
-    position: relative;
-}
-#main-nav #menu{
-    list-style-type:none;;
+nav ul{
+    list-style-type: none;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    align-items: center;
 }
 
-#menu li{
+nav ul li{
     margin-right: 20px;
-    position: relative;
 }
 
-#menu li a{
-    color: brown;
+button{
+    border: none;
+    background-color: blue;
+    padding: 15px;
+    color: whitesmoke;
+
+    border-radius: 10px;
 }
 
-#menu li a:hover ~ div{
-    width: 100%;
-    height: 2px;
-    background-color: brown;
-    transition: all 1s;
+button:hover{
+    opacity: 50%;
+    color: black;
+}
+
+button a{
+    color: white;
+
+    text-decoration: none;
+}
+
+a:hover{
+    color: black;
 }
 
 main{
-    margin-top: 150px;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
+    margin: 5rem auto;
+    width: 90%;
+    
+
 }
 
-#about-me h2{
+main h2{
     text-align: center;
-    margin-bottom: 40px;
     font-size: 2.5rem;
 }
+main p{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1rem;
+}
 
-#about-me .about{
+#sec-cont{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    gap: 2rem;
+    justify-content: center;
+
+    margin-top: 4rem;
+}
+
+#sec-cont section{
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    font-size: 2rem;
-}
-#about-me div h5{
-    width: 40%;
 }
 
-#about-me div p{
-    width: 60%;
-    margin-left: 160px;
+footer{ 
+    position: fixed;
+    bottom:0;
+    width: 100%;
+    
+
 }
-
-#about-me img{
-    border: 3px gray solid;
-    border-radius: 15px;
-    height: 500px; 
-    width:auto;
-
-    transition: all cubic-bezier(0.175, 0.885, 0.32, 1.275);
-}
-
-#hobbies{
-    margin-top: 70px;
-}
-
-#hobbies h2{
-    font-size: 2.5rem;
-}
-
-#hobbies ul  li{
-    margin: 20px;
-}
-
-#services {
-    margin-top: 80px;
-}
-
-#services h2{
-    font-size: 2.5rem;
-}
-
-#services ul{
-    list-style-type: square;
-}
-
-#services li{
-    margin: 20px;
+footer div {
+   text-align: center;
 }
 
 
-footer{
-    background-color: rgb(84, 80, 80);
-    font-size: 2rem;
-    text-align: center;
-}
-
-footer .container ul{
+form{
     display: flex;
-    justify-content: space-around;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
-    list-style-type: none;
+    width: 100%;
 }
 
-footer .container ul li a{
-    color: brown;
+#fname, #lname, #phoneNo, #email, #gender, #bday, #favColor, #password{
+    margin-bottom: 2rem;
+    padding: 1rem 4rem 1rem 1rem;
+    width: 300px;
+}
+
+#favColor{
+    padding: 0;
+}
+
+#login{
+    border: none;
+    border-radius: 10px;
+
+    color: whitesmoke;
+    background-color: blue;
+
+    margin-top: 5rem;
+    padding: 0.5rem 2rem;
 }
 
 
-@media (max-width:760px) {
+@media (max-width: 760px){
     #toggler{
         display: block;
 
         position: absolute;
-        top: -20px;
+        top: 25px;
         right: 20px;
         z-index: 2;
 
@@ -183,7 +156,7 @@ footer .container ul li a{
 
     .ham-cont{
         position: absolute;
-        top: -20px;
+        top: 25px;
         right: 20px;
         z-index: 1;
 
@@ -208,7 +181,7 @@ footer .container ul li a{
         width: 30px;
         height: 3px;
 
-        background-color: white;
+        background-color: black;
 
         border-radius: 10px;
 
@@ -240,7 +213,7 @@ footer .container ul li a{
     }
 
     #menu{
-        position: fixed;
+        position: absolute;
         top: 0;
         right: 0;
 
@@ -266,24 +239,15 @@ footer .container ul li a{
 
         transition: opacity 0.5s;
 
-        background: linear-gradient(to left, white, brown  );
+        background: linear-gradient(to left, white,  rgb(183, 183, 253) );
     }
 
     #toggler:checked ~ #menu li{
         opacity: 1;
     }
 
-    #about-me .about{
-        flex-direction: column;
-    }
 
-    #about-me .about div h5{
-        width: 100%;
-    }
-
-    #about-me .about div p{
-        width: 100%;
-        margin: auto;
+    #sec-cont{
+        grid-template-columns: auto;
     }
 }
-
