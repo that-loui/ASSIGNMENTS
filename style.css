@@ -1,253 +1,99 @@
 *{
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
+
 body{
-    width: 100%;
+    font-family:'Big Shoulders Display', cursive, 'Lexend Deca', sans-serif;
 
-    font-size: 20px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
-    background-color: rgb(183, 183, 253);
+    font-size: 15px;
+
+    /* height: 100%; */
+    background-color: hsl(0, 0%, 95%);
+    padding: 100px;
+
+  
 }
 
-header{
+section{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    width: 90%;
-    margin: 2rem auto;
 }
 
+.card-cont{
+    width: 250px;
+    height: 50%;
+   
 
-h2 span{
-    color: blue;
-}
-
-#toggler{
-    display: none;
-}
-
-nav ul{
-    list-style-type: none;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
-    align-items: center;
+    align-items:flex-start;
+    text-align: left;
 }
 
-nav ul li{
-    margin-right: 20px;
+.card{
+    margin: auto;
+    padding: 50px; 
 }
 
-button{
-    border: none;
-    background-color: blue;
-    padding: 15px;
-    color: whitesmoke;
-
-    border-radius: 10px;
+.orange{
+    background-color: hsl(31, 77%, 52%);
 }
 
-button:hover{
-    opacity: 50%;
-    color: black;
+.cyan{
+    background-color: hsl(184, 100%, 22%);
 }
 
-button a{
-    color: white;
-
-    text-decoration: none;
+.green{
+    background-color: hsl(179, 100%, 13%);
 }
 
-a:hover{
-    color: black;
+ header h2{
+    margin: 20px 0;
+    color: hsl(0, 0%, 95%);
 }
 
-main{
-    margin: 5rem auto;
-    width: 90%;
-    
 
-}
 
-main h2{
-    text-align: center;
-    font-size: 2.5rem;
-}
 main p{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 1rem;
+    color: hsla(0, 0%, 100%, 0.75);
+    line-height: 20px;
 }
 
-#sec-cont{
-    display: grid;
-    grid-template-columns: 40% 40%;
-    gap: 2rem;
-    justify-content: center;
-
-    margin-top: 4rem;
+footer{
+    margin-top: 60px;
 }
 
-#sec-cont section{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+footer button{
+    border: 3px solid  hsl(0, 0%, 95%) ;
+    background-color: hsl(0, 0%, 95%);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+}
+footer button:active{
+    border: 3px solid  hsl(0, 0%, 95%) ;
+    background-color: inherit;
+    color: hsl(0, 0%, 95%);
+}
+.orange-btn{
+    color: hsl(31, 77%, 52%);
 }
 
-footer{ 
-    position: fixed;
-    bottom:0;
-    width: 100%;
-    
-
-}
-footer div {
-   text-align: center;
+.cyan-btn{
+    color: hsl(184, 100%, 22%);
 }
 
-
-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
+.green-btn{
+    color:  hsl(179, 100%, 13%);
 }
 
-#fname, #lname, #phoneNo, #email, #gender, #bday, #favColor, #password{
-    margin-bottom: 2rem;
-    padding: 1rem 4rem 1rem 1rem;
-    width: 300px;
-}
-
-#favColor{
-    padding: 0;
-}
-
-#login{
-    border: none;
-    border-radius: 10px;
-
-    color: whitesmoke;
-    background-color: blue;
-
-    margin-top: 5rem;
-    padding: 0.5rem 2rem;
-}
-
-
-@media (max-width: 760px){
-    #toggler{
-        display: block;
-
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        z-index: 2;
-
-        width: 50px;
-        height: 50px;
-        opacity: 0;
-
-        cursor: pointer;
-    }
-
-    .ham-cont{
-        position: absolute;
-        top: 25px;
-        right: 20px;
-        z-index: 1;
-
-        width: 45px;
-        height: 45px;
-
-        cursor: pointer;
-
-        display: flex;
+@media (max-width:768px) {
+    section{
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .ham, 
-    .ham::before, 
-    .ham::after{
-
-        position: absolute;
-
-        display: block;
-        width: 30px;
-        height: 3px;
-
-        background-color: black;
-
-        border-radius: 10px;
-
-        transition: transform ease-in 0.5s;
-    }
-
-    .ham::before{
-        content: '';
-        top: -8px;
-    }
-
-    .ham::after{
-        content: '';
-        top: 8px;
-    }
-
-    #toggler:checked + .ham-cont .ham::before{
-        transform: rotate(50deg);
-        top: 0;
-    }
-
-    #toggler:checked + .ham-cont .ham{
-        background-color: rgba(240, 248, 255, 0);
-    }
-
-    #toggler:checked + .ham-cont .ham::after{
-        transform: rotate(-50deg);
-        top: 0;
-    }
-
-    #menu{
-        position: absolute;
-        top: 0;
-        right: 0;
-
-        width: 100%;
-        margin: auto;
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        margin-top: 6rem;
-    }
-
-    #menu li{
-
-        width: 100%;
-        margin: auto;
-        padding: 1rem;
-        border: 1px gray solid;
-        text-align: center;
-
-        opacity: 0;
-
-        transition: opacity 0.5s;
-
-        background: linear-gradient(to left, white,  rgb(183, 183, 253) );
-    }
-
-    #toggler:checked ~ #menu li{
-        opacity: 1;
-    }
-
-
-    #sec-cont{
-        grid-template-columns: auto;
     }
 }
