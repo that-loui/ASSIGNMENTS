@@ -59,7 +59,7 @@ section{
 }
 
 .card-body{
-    min-height: 150px;
+    max-height: 200px;
 }
 
 main p{
